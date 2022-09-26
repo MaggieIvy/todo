@@ -11,6 +11,7 @@ for (let i = 0; i < myNodelist.length; i++) {
     e.preventDefault()
     myNodelist[i].classList.toggle("done");
   }) 
+
   myNodelist[i].appendChild(span);
 }
 
@@ -25,8 +26,12 @@ for (i = 0; i < close.length; i++) {
 }
 
 function clearAll() {
-    console.log("cleared");
+  // var close = document.getElementsByClassName("close");
+  console.log(close)
+  myNodelist.style.display = "none";
+  console.log(myNodelist)
 }
+
 
 //click on enter event
 var onEnter = document.getElementById("myInput");
