@@ -58,6 +58,26 @@ list.addEventListener('click', function(ev) {
 }, false);
 
 
+function myFilter() {
+  // var input, filter, ul, li;
+  var input = document.getElementById('myInput2');
+  var filter = input.value.toUpperCase();
+  var ul =document.getElementById("myUl");
+  var li =document.getElementsByTagName("li");
+
+  for ( i = 0; i < li.length; i++) {
+    var a = li[i];
+    var txtValue =a.textContent || a.innerText;
+    console.log(input.value)
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+    
+  }
+}
+
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
