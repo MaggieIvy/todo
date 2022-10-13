@@ -6,13 +6,14 @@ for (let i = 0; i < myNodelist.length; i++) {
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+  console.log(myNod
+    elist)
   // strike through
   myNodelist[i].addEventListener('dblclick', function(e) {
     e.preventDefault()
     myNodelist[i].classList.toggle("done");
-  }) 
-
-  myNodelist[i].appendChild(span);
+  })
 }
 
 // Click on a close button to hide the current list item
@@ -26,27 +27,21 @@ for (i = 0; i < close.length; i++) {
 }
 
 function clearAll() {
-  // var close = document.getElementsByClassName("close");
-  console.log(close)
-  myNodelist.style.display = "none";
   console.log(myNodelist)
+  for (let i = 0; i < myNodelist.length; i++) {
+    myNodelist[i].style.display = "none";
+  }
 }
 
 
 //click on enter event
 var onEnter = document.getElementById("myInput");
 onEnter.addEventListener("keypress", function(ev) {
-    console.log(ev)
     if (ev.key == "Enter") {
         ev.preventDefault();
         newElement()
     }
 })
-
-function onEnter() {
-    console.log("enter");
-    
-}
 
 
 // Add a "checked" symbol when clicking on a list item
@@ -68,7 +63,6 @@ function myFilter() {
   for ( i = 0; i < li.length; i++) {
     var a = li[i];
     var txtValue =a.textContent || a.innerText;
-    console.log(input.value)
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
@@ -77,6 +71,25 @@ function myFilter() {
     
   }
 }
+    
+// change myFunction to toggleInputs
+function myFunction() {
+  var title = document.getElementById("myInput");
+  var search = document.getElementById("myInput2");
+  var toggle = document.getElementById("toggle");
+
+  if (toggle.innerHTML === "Search") {
+    toggle.innerHTML = "Input"
+    // hide input and show search
+    title.style.display = "none";
+    search.style.display = "initial";
+  } else {
+    toggle.innerHTML = "Search"
+    search.style.display = "none";
+    title.style.display = "initial";
+  }
+}
+
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {

@@ -7,12 +7,14 @@
 <body>
     <div id="myDIV" class="header">
         <h2>My To Do List</h2>
+        <input type="text" id="myInput2" onkeyup="myFilter()" placeholder="Search for names..">
         <input type="text" id="myInput" placeholder="Title...">
+        <!-- <input type="hidden" id="txthidden" value="NO" onclick="buttontoggle();"> -->
         <span onclick="newElement()" class="addBtn">Add</span>
         <span onclick="clearAll()" class="delAll">clear All</span>
 
       </div>
-      <input type="text" id="myInput2" onkeyup="myFilter()" placeholder="Search for names..">
+      
 
       <ul id="myUL">
         <li>Hit the gym</li>
@@ -22,9 +24,12 @@
         <li>Read a book</li>
         <li>Organize office</li>
       </ul>
-
       <button onclick="clearAll()">Clear input field</button>
-
+      <button  onclick="myFunction()" id="toggle">Search</button>`
       <script src="index.js"></script>
+      <script type="text/javascript">
+        var click =document.getElementById("toggle")
+        click.type ="text";
+      </script>
 </body>
 </html>

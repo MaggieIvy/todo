@@ -2,3 +2,6 @@
     text-decoration: line-through;
   }
   
+  #myInput2 {
+    display: none;
+  }
