@@ -7,8 +7,6 @@ for (let i = 0; i < myNodelist.length; i++) {
   span.className = "close";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
-  console.log(myNod
-    elist)
   // strike through
   myNodelist[i].addEventListener('dblclick', function(e) {
     e.preventDefault()
@@ -27,7 +25,6 @@ for (i = 0; i < close.length; i++) {
 }
 
 function clearAll() {
-  console.log(myNodelist)
   for (let i = 0; i < myNodelist.length; i++) {
     myNodelist[i].style.display = "none";
   }
